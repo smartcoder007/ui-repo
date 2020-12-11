@@ -1,0 +1,99 @@
+{
+  "name": "react-webui",
+  "version": "0.1.0",
+  "private": true,
+  "homepage": "/home",
+  "dependencies": {
+    "@testing-library/jest-dom": "^5.11.6",
+    "@testing-library/react": "^11.2.2",
+    "@testing-library/user-event": "^12.5.0",    
+    "axios":"^0.20.0",
+    "js-cookie": "2.2.1",
+    "moment": "2.29.1",
+    "prop-types": "15.7.2",
+    "react": "^17.0.1",
+    "react-dom": "^17.0.1",
+    "react-scripts": "4.0.1",
+    "web-vitals": "^0.2.4",
+    "react-app-polyfill": "2.0.0",
+    "react-redux": "7.2.1",
+    "redux": "4.0.5",
+    "redux-thunk": "2.3.0",
+    "react-router": "5.2.0",
+    "react-router-dom": "5.2.0",
+    "reselect": "4.0.0",
+    "scroll-to-element": "2.0.3"
+
+
+  },
+  "devDependencies": {
+    "babel-eslint": "10.1.0",
+    "cross-env": "7.0.2",
+    "enzyme": "3.11.0",    
+    "enzyme-adapter-react-16": "1.15.5",
+    "eslint-config-prettier": "6.15.0",
+    "eslint-plugin-import": "2.22.1",
+    "eslint-plugin-jest": "24.0.2",
+    "eslint-plugin-jsx-a11y": "6.4.1",
+    "eslint-plugin-no-smart-quotes": "1.1.0",
+    "eslint-plugin-react-hooks": "4.1.2",
+    "gulp": "4.0.2",
+    "gulp-cli": "2.3.0",
+    "gulp-postcss": "9.0.0",
+    "gulp-sass": "4.1.0",
+    "gulp-sourcemaps": "2.6.5",
+    "npm-run-all": "4.1.5",
+    "postcss": "8.1.8",
+    "postcss-flexbugs-fixes": "4.2.1",
+    "postcss-normalize": "9.0.0",
+    "postcss-preset-env": "6.7.0",
+    "postcss-replace": "1.1.2",
+    "postcss-url": "8.0.0",
+    "prettier": "2.1.2",
+    "rimraf": "3.0.2"
+
+    
+  },
+ 
+  "scripts": {
+    "cypress:open":"cypress open",
+    "prebuild":"cross-env NODE_ENV=production npm-run-all clean:build lint format:check",
+    "start": "npm-run-all --parallel run:start watch:*",
+    "clean:build":"rimraf ./build",    
+    "build": "npm run run:build",
+    "run:build":"nide scripts/run.js build",
+    "test":"react-scripts test",    
+    "eject": "react-scripts eject",
+    "styles": "gulp build",
+    "watch:styles":"gulp watch",
+    "format":"prettier --write \"{src,public}/**/*.{js,jsx,html,json,css,scss,md,mdx,yml,yaml}\"",
+    "lint":"eslint src",
+    "lint:fix":"npm run lint --fix"
+  },
+  "eslintConfig": {
+    "extends": [
+      "react-app",
+      "react-app/jest"
+    ]
+  },
+  "compilerOptions":{
+    "baseUrl":"reactwebui",
+    "paths":{
+      "*":[
+        "src/*"
+      ]
+    }
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  }
+}

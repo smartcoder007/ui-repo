@@ -2,12 +2,12 @@
   "name": "react-webui",
   "version": "0.1.0",
   "private": true,
-  "homepage": "/home",
+  "homepage": "/login",
   "dependencies": {
     "@testing-library/jest-dom": "^5.11.6",
     "@testing-library/react": "^11.2.2",
-    "@testing-library/user-event": "^12.5.0",    
-    "axios":"^0.20.0",
+    "@testing-library/user-event": "^12.5.0",
+    "axios": "^0.20.0",
     "js-cookie": "2.2.1",
     "moment": "2.29.1",
     "prop-types": "15.7.2",
@@ -22,14 +22,14 @@
     "react-router": "5.2.0",
     "react-router-dom": "5.2.0",
     "reselect": "4.0.0",
-    "scroll-to-element": "2.0.3"
-
-
+    "scroll-to-element": "2.0.3",
+    "react-bootstrap": "1.3.0",
+    "bootstrap": "4.5.3"
   },
   "devDependencies": {
     "babel-eslint": "10.1.0",
     "cross-env": "7.0.2",
-    "enzyme": "3.11.0",    
+    "enzyme": "3.11.0",
     "enzyme-adapter-react-16": "1.15.5",
     "eslint-config-prettier": "6.15.0",
     "eslint-plugin-import": "2.22.1",
@@ -51,24 +51,12 @@
     "postcss-url": "8.0.0",
     "prettier": "2.1.2",
     "rimraf": "3.0.2"
-
-    
   },
- 
   "scripts": {
-    "cypress:open":"cypress open",
-    "prebuild":"cross-env NODE_ENV=production npm-run-all clean:build lint format:check",
-    "start": "npm-run-all --parallel run:start watch:*",
-    "clean:build":"rimraf ./build",    
-    "build": "npm run run:build",
-    "run:build":"nide scripts/run.js build",
-    "test":"react-scripts test",    
-    "eject": "react-scripts eject",
-    "styles": "gulp build",
-    "watch:styles":"gulp watch",
-    "format":"prettier --write \"{src,public}/**/*.{js,jsx,html,json,css,scss,md,mdx,yml,yaml}\"",
-    "lint":"eslint src",
-    "lint:fix":"npm run lint --fix"
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test",
+    "eject": "react-scripts eject"
   },
   "eslintConfig": {
     "extends": [
@@ -76,10 +64,10 @@
       "react-app/jest"
     ]
   },
-  "compilerOptions":{
-    "baseUrl":"reactwebui",
-    "paths":{
-      "*":[
+  "compilerOptions": {
+    "baseUrl": "reactwebui",
+    "paths": {
+      "*": [
         "src/*"
       ]
     }

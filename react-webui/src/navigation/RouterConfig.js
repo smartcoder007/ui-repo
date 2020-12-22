@@ -3,15 +3,19 @@ import { Route, Switch } from "react-router-dom";
 import { AuthRoute } from "./AuthRoute";
 import { Landing } from "../pages/Landing";
 import { Login } from "../pages/Login";
+import { useSelector } from "react-redux";
 
 const RouterConfig = () => {
+  const userToken = useSelector((state) => state.AppReducer.userInfo);
   return (
     <div>
       <Switch>
         <Route path="/" exact component={Login} />
-        <Route path="/login" exact component={Login} />
-        <Route path="/landing" exact component={Landing} />
-        <AuthRoute path="/landing1" component={Landing} />
+        <AuthRoute
+          path="/landing"
+          isTokenAvailable={userToken}
+          component={Landing}
+        />
       </Switch>
     </div>
   );

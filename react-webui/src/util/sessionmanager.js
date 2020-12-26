@@ -1,21 +1,21 @@
 import * as Cookies from "js-cookie";
 
 const setCookie = (key, value) => {
-  //eslint-disable-next-line no-console
-  console.log(`setkey---${key}`, value);
+  console.log(`set cookie---${key}`, value);
   Cookies.remove(key);
   Cookies.set(key, value, { expires: 14 });
 };
 
 const removeCookies = (key) => {
+  console.log(`remove cookie---${key}`, key);
   Cookies.remove(key);
 };
 
 const getCookies = (key) => {
   const sessionCookie = Cookies.get(key);
-  //eslint-disable-next-line no-console
-  console.log(`get key.... ${sessionCookie}`);
+  console.log(`get cookie.... ${sessionCookie}`);
   if (sessionCookie === undefined) {
+    console.log(`get cookie is null....`);
     return null;
   }
   return sessionCookie;
@@ -23,9 +23,9 @@ const getCookies = (key) => {
 
 const getSessionCookies = () => {
   const sessionCookie = Cookies.get("session");
-  //eslint-disable-next-line no-console
   console.log(`session.... ${sessionCookie}`);
   if (sessionCookie === undefined) {
+    console.log(`getSessionCookies is null....`);
     return null;
   }
   return sessionCookie;

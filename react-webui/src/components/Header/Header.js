@@ -42,6 +42,7 @@ const Header = () => {
             <NavDropdown.Item href="/userform1">
               User Registration2
             </NavDropdown.Item>
+            <NavDropdown.Item href="/users">Users</NavDropdown.Item>
 
             <NavDropdown.Divider />
             <NavDropdown.Item href="#action/3.4">

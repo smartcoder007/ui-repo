@@ -8,4 +8,18 @@ async function AuthCheck(url = "", data = {}) {
   return obj;
 }
 
-export { AuthCheck };
+async function GetApi(url = "") {
+  console.log("Get Api call...");
+
+  const response = await fetch(url, {
+    method: "GET",
+    mode: "cors",
+    headers: {
+      Authorization: ``,
+    },
+  });
+
+  return response.json();
+}
+
+export { AuthCheck, GetApi };

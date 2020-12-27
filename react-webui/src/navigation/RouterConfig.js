@@ -7,6 +7,7 @@ import { useSelector } from "react-redux";
 import { AutoComplete } from "../pages/AutoComplete/AutoComplete";
 import { UserForm } from "../pages/UserForm/UserForm";
 import { UserForm1 } from "../pages/UserForm/UserForm1";
+import { UserInfo } from "../pages/UserInfo/UserInfo";
 
 const RouterConfig = () => {
   const userToken = useSelector((state) => state.AppReducer.userInfo);
@@ -18,6 +19,7 @@ const RouterConfig = () => {
         <Route path="/autocomplete" exact component={AutoComplete} />
         <Route path="/userform" exact component={UserForm} />
         <Route path="/userform1" exact component={UserForm1} />
+        <Route path="/users" exact component={UserInfo} />
         <AuthRoute
           path="/landing"
           isTokenAvailable={userToken}

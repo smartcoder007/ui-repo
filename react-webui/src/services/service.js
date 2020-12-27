@@ -10,7 +10,6 @@ async function AuthCheck(url = "", data = {}) {
 
 async function GetApi(url = "") {
   console.log("Get Api call...");
-
   const response = await fetch(url, {
     method: "GET",
     mode: "cors",
@@ -18,7 +17,6 @@ async function GetApi(url = "") {
       Authorization: ``,
     },
   });
-
   return response.json();
 }
 

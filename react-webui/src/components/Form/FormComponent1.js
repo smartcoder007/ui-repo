@@ -44,7 +44,6 @@ const FormComponent1 = (props) => {
             <Form.Group>
               <Form.Label>Gender</Form.Label>
               <br />
-              Male
               <input
                 type="radio"
                 name="gender"
@@ -52,7 +51,7 @@ const FormComponent1 = (props) => {
                 checked={props.gender === "male"}
                 onChange={props.handleChange}
               />
-              Female
+              Male
               <input
                 type="radio"
                 name="gender"
@@ -60,6 +59,7 @@ const FormComponent1 = (props) => {
                 checked={props.gender === "female"}
                 onChange={props.handleChange}
               />
+              Female
               {/*
                   <Form.Check
                     inline

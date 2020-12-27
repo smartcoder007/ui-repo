@@ -1,9 +1,9 @@
 import React, { useEffect, useState } from "react";
-import { Container, Table } from "react-bootstrap";
+import { Container, Table, Row } from "react-bootstrap";
 import { GetApi } from "../../services/service";
 
 const UserInfo = () => {
-  const [users, setUsers] = useState({});
+  const [users, setUsers] = useState({ data: [] });
 
   const getUsers = () => {
     return GetApi("https://gorest.co.in/public-api/users")
@@ -54,6 +54,9 @@ const UserInfo = () => {
             ))}
         </tbody>
       </Table>
+      <div className="mb-5">
+        <Row></Row>
+      </div>
     </Container>
   );
 };

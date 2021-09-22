@@ -12,4 +12,7 @@ const store = createStore(
   window.__REDUX_DEVTOOlS_EXTENSION__ && window.__REDUX_DEVTOOlS_EXTENSION__()
 );
 
+console.log("Initial state ", store.getState());
+store.subscribe(() => console.log("updated state ", store.getState()));
+
 export { store };

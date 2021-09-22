@@ -64,3 +64,21 @@ h1 {
   margin-left: 30px;
   padding-bottom: 25px;
 }
+
+.login-wrapper {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  text-align: left;
+  margin: 50px;
+}
+
+.login-inner {
+  width: 30%;
+  margin: auto;
+  background: #ffffff;
+  box-shadow: 0px 14px 80px rgba(34, 35, 58, 0.2);
+  padding: 40px 55px 45px 55px;
+  border-radius: 15px;
+  transition: all 0.3s;
+}

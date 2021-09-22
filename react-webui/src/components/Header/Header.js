@@ -8,15 +8,31 @@ import {
   Button,
 } from "react-bootstrap";
 
-import { useSelector } from "react-redux";
+import { logoutuser } from "../../redux/actions/authactions";
+import { useDispatch, useSelector } from "react-redux";
+import { useHistory } from "react-router-dom";
+import { Redirect } from "react-router";
 
-const Header = () => {
+const Header = (props) => {
   const userinfo = useSelector((state) => state.AppReducer.userInfo);
+  const dispatch = useDispatch();
 
   if (userinfo != null) {
-    console.log("userinfo : " + JSON.stringify(userinfo));
+    console.log("Header userinfo : " + JSON.stringify(userinfo));
     console.log("username : " + userinfo.username);
   }
+  const logoutHandler = () => {
+    console.log("logoutHandler.....");
+    dispatch(logoutuser());
+    if (userinfo == null) {
+      console.log("log out successful");
+      console.log("props" + JSON.stringify(props));
+      return <Redirect to="/login" />;
+    } else {
+      console.log("log out un successful ");
+    }
+  };
+
   return (
     <Navbar bg="primary" expand="lg">
       <Navbar.Brand href="#home" className="text-light">
@@ -59,6 +75,14 @@ const Header = () => {
             Search
           </Button>
         </Form>
+        <Nav className="mr-1">
+          {/* <Nav.Link href="/logout" className="text-light">
+            Logout
+        </Nav.Link> */}
+          <Button type="submit" onClick={logoutHandler}>
+            Logout
+          </Button>
+        </Nav>
       </Navbar.Collapse>
     </Navbar>
   );

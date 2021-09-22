@@ -6,6 +6,7 @@ import {
   authenticate,
   authenticateBegin,
 } from "../../redux/actions/authactions";
+import "../../styles/Form.css";
 
 const Login = () => {
   const STATUS = {
@@ -23,6 +24,9 @@ const Login = () => {
   const userToken = useSelector((state) => state.AppReducer.userInfo);
 
   if (userToken != null) {
+    console.log(
+      "In login page user token is not empty" + JSON.stringify(userToken)
+    );
     return <Redirect to="/landing" />;
   } else {
     console.log("user token is empty");
@@ -41,43 +45,62 @@ const Login = () => {
     setPassword(value);
   };
   return (
-    <Container>
-      <h6 className="text-center text-primary">User Login</h6>
-      {isSubmited && <Row>{error}</Row>}
-      <Row className="mt-2 align-items-center">
-        <Form>
-          <Form.Group controlId="formBasicEmail">
-            <Form.Label>User Name</Form.Label>
-            <Form.Control
-              type="text"
+    <div className="login-wrapper">
+      <div className="login-inner">
+        {isSubmited && <Row>{error}</Row>}
+        <form>
+          <h3 className="text-center">Sign In</h3>
+
+          <div className="form-group">
+            <label>Email address</label>
+            <input
+              type="email"
               value={userName}
-              placeholder="Enter username"
+              className="form-control"
+              placeholder="Enter email"
               onChange={(event) => onChangeUserName(event.target.value)}
             />
-            <Form.Text className="text-muted">
-              We'll never share your email with anyone else.
-            </Form.Text>
-          </Form.Group>
+          </div>
 
-          <Form.Group controlId="formBasicPassword">
-            <Form.Label>Password</Form.Label>
-            <Form.Control
+          <div className="form-group">
+            <label>Password</label>
+            <input
               type="password"
               value={password}
-              placeholder="Password"
+              className="form-control"
+              placeholder="Enter password"
               onChange={(event) => onChangePassword(event.target.value)}
             />
-          </Form.Group>
-          <Button
-            variant="primary"
+          </div>
+
+          <div className="form-group">
+            <div className="custom-control custom-checkbox">
+              <input
+                type="checkbox"
+                className="custom-control-input"
+                id="customCheck1"
+              />
+              <label className="custom-control-label" htmlFor="customCheck1">
+                Remember me
+              </label>
+            </div>
+          </div>
+
+          <button
+            type="submit"
+            className="btn btn-primary btn-block"
             onClick={loginHandler}
-            className="text-center"
           >
-            Login
-          </Button>
-        </Form>
-      </Row>
-    </Container>
+            Submit
+          </button>
+          <p className="forgot-password text-right">
+            Forgot <a href="#">password?</a>
+            <br />
+            Register <a href="/signup">SignUp?</a>
+          </p>
+        </form>
+      </div>
+    </div>
   );
 };
 

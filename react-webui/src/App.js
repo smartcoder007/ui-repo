@@ -4,6 +4,7 @@ import { RouterConfig } from "./navigation/RouterConfig";
 import { Header } from "./components/Header";
 import { Footer } from "./components/Footer";
 import { Provider } from "react-redux";
+import NavBar from "./components/NavBar/NavBar";
 
 import { store } from "./redux/store";
 
@@ -12,7 +13,8 @@ const App = () => {
     <Provider store={store}>
       <Header></Header>
       <BrowserRouter>
-        <RouterConfig></RouterConfig>
+        {/*<NavBar /> */}
+        <RouterConfig basename=""></RouterConfig>
       </BrowserRouter>
       <Footer></Footer>
     </Provider>

@@ -76,4 +76,6 @@ Read instructions
    https://stackoverflow.com/questions/16073603/how-can-i-update-each-dependency-in-package-json-to-the-latest-version
    npx npm-check-updates -u
    npm install 
-3. 
+3. Run JSon server
+  > npm install json-server
+  > npx json-server ./data/db.json -p 9000

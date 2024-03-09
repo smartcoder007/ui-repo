@@ -61,7 +61,7 @@ const Header = (props) => {
               User Registration2
             </NavDropdown.Item>
             <NavDropdown.Item href="/users">Users</NavDropdown.Item>
-
+              <NavDropdown.Item href="/product">Product</NavDropdown.Item>
             <NavDropdown.Divider />
             <NavDropdown.Item href="#action/3.4">
               Separated link

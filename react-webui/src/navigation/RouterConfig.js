@@ -9,6 +9,7 @@ import { UserForm } from "../pages/UserForm/UserForm";
 import { UserForm1 } from "../pages/UserForm/UserForm1";
 import { UserInfo } from "../pages/UserInfo/UserInfo";
 import { Signup } from "../pages/Signup/Signup";
+import  Product from "../pages/Product/Product";
 
 const RouterConfig = () => {
   const userToken = useSelector((state) => state.AppReducer.userInfo);
@@ -46,6 +47,11 @@ const RouterConfig = () => {
           path="/userform1"
           isTokenAvailable={userToken}
           component={UserForm1}
+        />
+        <AuthRoute
+            path="/product"
+            isTokenAvailable={userToken}
+            component={Product}
         />
       </Switch>
     </div>

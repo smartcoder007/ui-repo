@@ -1,0 +1,22 @@
+{
+  "products": [
+    {
+      "id": 1,
+      "name": "tv",
+      "price": 5000,
+      "checked": false
+    },
+    {
+      "id": 1,
+      "name": "Fridge",
+      "price": 10000,
+      "checked": false
+    },
+    {
+      "id": 1,
+      "name": "sofa",
+      "price": 1000,
+      "checked": true
+    }
+  ]
+}

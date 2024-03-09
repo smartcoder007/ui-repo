@@ -68,3 +68,12 @@ This section has moved here: [https://facebook.github.io/create-react-app/docs/d
 ### `npm run build` fails to minify
 
 This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+
+Read instructions
+
+1. npm audit fix, - upgrade to compatible versions - in package-lock.json
+2. how-can-i-update-each-dependency-in-package-json-to-the-latest-version
+   https://stackoverflow.com/questions/16073603/how-can-i-update-each-dependency-in-package-json-to-the-latest-version
+   npx npm-check-updates -u
+   npm install 
+3. 

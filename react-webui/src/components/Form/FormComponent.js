@@ -1,9 +1,10 @@
 import React from "react";
 import "../../styles/Form.css";
+import { Form, Button, Container, Card, Row, Col } from "react-bootstrap";
 
 const FormComponent = (props) => {
   return (
-    <main>
+    <Container>
       <h1>Sample form</h1>
       <form className="inputForm">
         <input
@@ -116,7 +117,7 @@ const FormComponent = (props) => {
           <span>**Vegan meal : {props.isVegan ? " Yes" : "No"}</span>
         </div>
       </div>
-    </main>
+    </Container>
   );
 };
 

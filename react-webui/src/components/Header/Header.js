@@ -6,6 +6,8 @@ import {
   Form,
   FormControl,
   Button,
+  Row,
+  Col
 } from "react-bootstrap";
 
 import { logoutuser } from "../../redux/actions/authactions";
@@ -66,16 +68,24 @@ const Header = (props) => {
             </NavDropdown.Item>
           </NavDropdown>
         </Nav>
+       </Navbar.Collapse>
+       <Nav className="justify-content-end">
         {userinfo !== null && (
-          <Nav className="mr-2 text-light">{userinfo.username}</Nav>
+          <Nav className="me-5 text-light"> User : {userinfo.username}</Nav>
         )}
         <Form inline>
+        <Row>
+        <Col xs="auto">
           <FormControl type="text" placeholder="Search" className="mr-sm-2" />
+         </Col>
+         <Col xs ="auto">
           <Button variant="outline-success" className="text-light">
             Search
           </Button>
+          </Col>
+         </Row>
         </Form>
-        <Nav className="mr-1">
+        <Nav className="mr-sm-1">
           {/* <Nav.Link href="/logout" className="text-light">
             Logout
         </Nav.Link> */}
@@ -83,7 +93,7 @@ const Header = (props) => {
             Logout
           </Button>
         </Nav>
-      </Navbar.Collapse>
+       </Nav>
     </Navbar>
   );
 };

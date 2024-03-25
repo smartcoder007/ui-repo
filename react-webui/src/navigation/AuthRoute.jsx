@@ -1,5 +1,5 @@
 import React from "react";
-import { Route, Redirect } from "react-router-dom";
+import { Route, Navigate } from "react-router-dom";
 
 const AuthRoute = ({ component: Component, isTokenAvailable, data }) => {
   console.log("AuthRoute => " + JSON.stringify(isTokenAvailable) + " ," + data);
@@ -9,7 +9,7 @@ const AuthRoute = ({ component: Component, isTokenAvailable, data }) => {
         isTokenAvailable !== null ? (
           <Component {...props} data={data} />
         ) : (
-          <Redirect to="/" />
+            <Navigate to="/" />
         )
       }
     />

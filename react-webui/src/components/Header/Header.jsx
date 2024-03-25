@@ -12,12 +12,13 @@ import {
 
 import { logoutuser } from "../../redux/actions/authactions";
 import { useDispatch, useSelector } from "react-redux";
-import { useHistory } from "react-router-dom";
-import { Redirect } from "react-router";
+import { useNavigate } from "react-router-dom";
+
 
 const Header = (props) => {
   const userinfo = useSelector((state) => state.AppReducer.userInfo);
   const dispatch = useDispatch();
+  const navigate = useNavigate();
 
   if (userinfo != null) {
     console.log("Header userinfo : " + JSON.stringify(userinfo));
@@ -29,7 +30,7 @@ const Header = (props) => {
     if (userinfo == null) {
       console.log("log out successful");
       console.log("props" + JSON.stringify(props));
-      return <Redirect to="/login" />;
+      navigate('/login')
     } else {
       console.log("log out un successful ");
     }

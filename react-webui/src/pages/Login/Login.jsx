@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { Form, Button, Container, Card, Row } from "react-bootstrap";
 import { useDispatch, useSelector } from "react-redux";
-import { Redirect } from "react-router";
+import { Navigate } from "react-router-dom";
 import {
   authenticate,
   authenticateBegin,
@@ -27,7 +27,7 @@ const Login = () => {
     console.log(
       "In login page user token is not empty" + JSON.stringify(userToken)
     );
-    return <Redirect to="/landing" />;
+    return <Navigate replace to="/landing" />;
   } else {
     console.log("user token is empty");
   }
